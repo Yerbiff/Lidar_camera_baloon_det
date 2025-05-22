@@ -4,7 +4,7 @@
 
 Celem projektu było stworzenie systemu estymującego pozycję balonu w przestrzeni 3D na podstawie obrazu z kamery RGB. Jako dane referencyjne (ground truth) wykorzystano dane z lidaru.
 
-Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu kamera + lidar dla trzech różnych odległości.
+Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu kamera + lidar dla różnych odległości.
 
 ---
 
@@ -26,9 +26,8 @@ Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu 
 - Dane zapisano do plików `.bag`.
 
 ### 2. Przetwarzanie danych
-- Z danych lidarowych wysegmentowano punkt odpowiadający balonowi.
+- Z danych lidarowych wysegmentowano punkty odpowiadające piłce.
 - Obliczono środek obiektu w przestrzeni 3D — uznano go za ground truth.
-- 
 
 ### 3. Estymacja z kamery
 - Wykorzystano różne podejścia do estymacji pozycji balonu na podstawie obrazu:
@@ -42,10 +41,6 @@ Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu 
 ---
 
 ## Wnioski
-
-- Lidar pozwala na dokładne wyznaczenie pozycji obiektu w przestrzeni 3D, co czyni go świetnym źródłem ground truth.
-- Dokładność estymatora z kamery spada wraz ze wzrostem odległości.
-- Klasyczne metody śledzenia mogą być wystarczające dla bliskich dystansów, ale w dalszych warto rozważyć bardziej zaawansowane podejścia (ML).
 
 ---
 
