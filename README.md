@@ -22,17 +22,15 @@ Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu 
 
 ### 1. Nagranie danych
 - Balon był poruszany przed kamerą i lidarem.
-- Nagrania wykonano z dystansów: **3 m**, **6 m**, **12 m**, **20 m**, **30 m**.
+- Nagrania wykonano z dystansów: **3 m**, **6 m**, **12 m**.
 - Dane zapisano do plików `.bag`.
 
 ### 2. Przetwarzanie danych
-- Z danych lidarowych wysegmentowano punkty odpowiadające piłce.
+- Z danych lidarowych wysegmentowano ręcznie punkty odpowiadające piłce (przy użyciu [Supervisely](https://app.supervisely.com/)).
 - Obliczono środek obiektu w przestrzeni 3D — uznano go za ground truth.
 
 ### 3. Estymacja z kamery
-- Wykorzystano różne podejścia do estymacji pozycji balonu na podstawie obrazu:
-  - Klasyczna analiza obrazu (np. segmentacja koloru)
-  - Śledzenie obiektu (np. OpenCV Tracking API)
+- Wykorzystano klasyczne podejścia do estymacji pozycji balonu na podstawie obrazu (segmentacja koloru)
 
 ### 4. Porównanie wyników
 - Porównano błędy estymacji pozycji względem ground truth z lidara.
