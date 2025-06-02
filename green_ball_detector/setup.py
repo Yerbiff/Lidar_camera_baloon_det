@@ -21,6 +21,7 @@ setup(
         'console_scripts': [
             'cam_ball_detector = green_ball_detector.cam_ball_detector:main',
             'lidar_ball_detector = green_ball_detector.lidar_ball_detector:main',
+            'gt_ball = green_ball_detector.gt_ball:main',
         ],
     },
 
