@@ -1,5 +1,13 @@
 Visualization Manager:
   Class: ""
+  Enabled: true
+  Name: root
+  Value: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: base_link 
+    Frame Rate: 30
+
   Displays:
     - Class: rviz_default_plugins/PointCloud2
       Enabled: true
@@ -13,27 +21,46 @@ Visualization Manager:
         Value: /sensing/lidar/concatenated/pointcloud
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+
     - Class: rviz_default_plugins/TF
       Enabled: true
+      Name: TF
       Frame Timeout: 15
       Frames:
         All Enabled: true
       Marker Scale: 1
-      Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
-      Tree:
-        {}
       Update Interval: 0
-      Value: true
-  Enabled: true
-  Global Options:
-    Background Color: 48; 48; 48
-    Fixed Frame: base_link
-    Frame Rate: 30
-  Name: root
+
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: GT Ball
+      Topic: /ground_truth_ball
+      Queue Size: 10
+
+    - Class: rviz_default_plugins/PointStamped
+      Enabled: true
+      Name: GT Ball Center
+      Topic: /ground_truth_ball_point
+      Queue Size: 10
+      Color: 255; 255; 255
+      Alpha: 1.0
+      Radius: 0.05
+
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Detected Green Ball
+      Topic: /detected_green_ball
+      Queue Size: 10
+
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Detected Ball (Annotation)
+      Topic: /SlyAnnotations
+      Queue Size: 10  
+
   Tools:
     - Class: rviz_default_plugins/Interact
       Hide Inactive Objects: true
@@ -42,13 +69,13 @@ Visualization Manager:
     - Class: rviz_default_plugins/FocusCamera
     - Class: rviz_default_plugins/Measure
       Line color: 128; 128; 0
-  Value: true
+
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
       Distance: 10
       Enable Stereo Rendering:
-        Stereo Eye Separation: 0.05999999865889549
+        Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
@@ -57,12 +84,11 @@ Visualization Manager:
         Y: 0
         Z: 0
       Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05000000074505806
+      Focal Shape Size: 0.05
       Invert Z Axis: false
       Name: Current View
-      Near Clip Distance: 0.009999999776482582
-      Pitch: 0.785398006439209
-      Target Frame: <Fixed Frame>
+      Near Clip Distance: 0.01
+      Pitch: 0.785398
+      Target Frame: base_link
       Value: Orbit (rviz)
-      Yaw: 0.785398006439209
-    Saved: ~
+      Yaw: 0.785398
