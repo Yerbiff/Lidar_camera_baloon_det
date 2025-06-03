@@ -12,7 +12,7 @@ Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu 
 
 - Kamera RGB (skalibrowana względem lidara)
 - Lidar 3D
-- Balon jako obiekt śledzenia
+- Zielona piłka jako obiekt śledzenia
 - Samochód z zamontowaną kamerą i lidarem
 - ROS 2 + rosbag
 
@@ -22,7 +22,7 @@ Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu 
 
 ### 1. Nagranie danych
 - Balon był poruszany przed kamerą i lidarem.
-- Nagrania wykonano z dystansów: **3 m**, **6 m**, **12 m**.
+- Nagrania wykonano z dystansów: **3 m**, **6 m**, **12 m**, **20 m**, **29 m**.
 - Dane zapisano do plików `.bag`.
 
 ### 2. Przetwarzanie danych
@@ -38,9 +38,6 @@ Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu 
 
 ---
 
-## Wnioski
-
----
 
 ## Autorzy
 
