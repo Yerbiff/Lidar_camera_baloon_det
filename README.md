@@ -36,6 +36,17 @@ Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu 
 - Porównano błędy estymacji pozycji względem ground truth z lidara.
 - Przeanalizowano wpływ odległości na dokładność estymacji.
 
+| Odległość [m] | Średni błąd [m] | Odch. standardowe [m] |
+|:-------------:|:---------------:|:----------------------:|
+|      3        |       --        |           --           |
+|      6        |       --        |           --           |
+|     12        |       --        |           --           |
+|     20        |       --        |           --           |
+|     29        |       --        |           --           |
+
+- Dokładność estymacji pozycji obiektu z obrazu pogarsza się wraz ze wzrostem odległości od kamery.
+- Przy małych dystansach estymacja bazująca na obrazie kolorowym jest precyzyjna.
+- W przypadku większych odległości rośnie wpływ ograniczonej rozdzielczości obrazu, zakłóceń oraz zniekształceń optycznych, co skutkuje wyższym błędem lokalizacji.
 ---
 
 
