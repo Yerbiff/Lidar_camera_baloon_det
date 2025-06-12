@@ -33,20 +33,24 @@ Dane zostały nagrane w formacie rosbag z wykorzystaniem skalibrowanego zestawu 
 - Wykorzystano klasyczne podejścia do estymacji pozycji balonu na podstawie obrazu (segmentacja koloru)
 
 ### 4. Porównanie wyników
-- Porównano błędy estymacji pozycji względem ground truth z lidara.
-- Przeanalizowano wpływ odległości na dokładność estymacji.
 
-| Odległość [m] | Średni błąd [m] | Odch. standardowe [m] |
-|:-------------:|:---------------:|:----------------------:|
-|      3        |       --        |           --           |
-|      6        |       --        |           --           |
-|     12        |       --        |           --           |
-|     20        |       --        |           --           |
-|     29        |       --        |           --           |
+Porównano pozycję piłki estymowaną z obrazu z kamerą z ground truth pozyskanym z oznaczonych danych z lidara. Zbadano wpływ odległości na dokładność estymacji w przestrzeni XYZ.
 
-- Dokładność estymacji pozycji obiektu z obrazu pogarsza się wraz ze wzrostem odległości od kamery.
-- Przy małych dystansach estymacja bazująca na obrazie kolorowym jest precyzyjna.
-- W przypadku większych odległości rośnie wpływ ograniczonej rozdzielczości obrazu, zakłóceń oraz zniekształceń optycznych, co skutkuje wyższym błędem lokalizacji.
+| Odległość lidar [m] | Odległość kamera [m]  | Średni błąd XYZ [m] | Odch. standardowe [m]  |
+|:-------------------:|:---------------------:|:-------------------:|:----------------------:|
+|        4.1          |         4.0           |        0.37         |         0.08           |
+|         7           |         6.4           |        0.70         |         0.12           |
+|        13           |         11            |        2.20         |         0.18           |
+|        21           |         16.5          |        4.88         |         0.25           |
+|        29           |        N/A*            |        N/A*         |         N/A*           |
+
+> \*Dla 29 m piłka nie została wykryta – prawdopodobnie przez cień lub zmianę koloru.
+
+#### Wnioski:
+- Dokładność estymacji pozycji z obrazu **pogarsza się wraz ze wzrostem odległości** od kamery.
+- **Główna część błędu pochodzi z osi Z (głębi)** – błąd w płaszczyźnie XY był niewielki, i **mogł również wynikać z niedokładności ręcznego oznaczania pozycji piłki**.
+- Dla większych odległości dokładność spada – wpływają na to ograniczenia rozdzielczości, oświetlenia i zniekształcenia optyczne.
+
 ---
 
 
